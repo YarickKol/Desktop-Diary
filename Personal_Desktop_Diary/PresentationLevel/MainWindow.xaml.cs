@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace PresentationLevel
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
+        private User _user;
+        public MainWindow(User user)
+        {           
             InitializeComponent();
+            _user = user;
+            welcomeTextblock.Text += $" {user.Name}  {user.Surname}";
         }
     }
 }

@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PresentationLevel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Normal" Topmost="True">
     <Grid>
+        <Border CornerRadius="10" Grid.RowSpan="2" Cursor="Arrow">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#7be9f6" Offset="0.0"/>
+                    <GradientStop Color="#FFB300C2" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
 
+        <StackPanel VerticalAlignment="Top">
+
+            <TextBlock Text="Welcome "
+                           FontWeight="Bold"
+                           FontFamily="helvetica"
+                           FontSize="22"                           
+                           Foreground="White"
+                           HorizontalAlignment="Left"
+                           Margin="20"
+                           x:Name="welcomeTextblock"/>
+        </StackPanel>
     </Grid>
 </Window>
