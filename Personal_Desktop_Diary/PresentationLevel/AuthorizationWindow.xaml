@@ -8,21 +8,7 @@
         Title="MainWindow" Height="450" Width="380"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Window.Resources>
-        <Style TargetType="{x:Type Button}">            
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="10"  BorderBrush="White" BorderThickness="2" Width="70" Height="40" >
-                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
+    
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -103,8 +89,8 @@
 
 
                 <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
-                    <Button Width="100" Height="40" Content="Cancel" Margin="60,0,60,0" Click="Cancel_Click" Cursor="Hand"/>
-                    <Button Width="100" Height="40" Content="Login" Click="Login_Click" Cursor="Hand"/>
+                    <Button Style="{StaticResource LoginStyle}" Width="100" Height="40" Content="Cancel" Margin="60,0,60,0" Click="Cancel_Click" Cursor="Hand"/>
+                    <Button Style="{StaticResource LoginStyle}" Width="100" Height="40" Content="Login" Click="Login_Click" Cursor="Hand"/>
                 </StackPanel>
 
             </StackPanel>

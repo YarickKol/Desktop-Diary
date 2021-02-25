@@ -1,4 +1,6 @@
-﻿using DataAccessLibrary.Models;
+﻿using BusinessLogicLayer.DTO;
+using BusinessLogicLayer.Services;
+using DataAccessLibrary.Models;
 using DataAccessLibrary.Repositories;
 using System;
 using System.Collections.Generic;
@@ -20,10 +22,12 @@ namespace PresentationLevel
     public partial class AuthorizationWindow : Window
     {
         private UnitOfWork _unitOfWork;
+
+        private UserService _service;
         public AuthorizationWindow()
         {
             InitializeComponent();
-            _unitOfWork = new UnitOfWork();
+            _service = new UserService(new UnitOfWork());
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -32,10 +36,9 @@ namespace PresentationLevel
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)
-        {
-            User user = _unitOfWork.Users.GetSingleItem(u => u.UserName == UsernameTextbox.Text &&
-            u.Password == Password_box.Password);
+        {           
 
+            UserDTO user = _service.LoginUser(UsernameTextbox.Text, Password_box.Password);
             if (user != null)
             {                  
                 MainWindow mainWindow = new MainWindow(user);                

@@ -5,17 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PresentationLevel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Normal" Topmost="True">
+        Title="MainWindow" Height="500" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Normal" >
     <Grid>
+        
+        
         <Border CornerRadius="10" Grid.RowSpan="2" Cursor="Arrow">
             <Border.Background>
                 <LinearGradientBrush>
                     <GradientStop Color="#7be9f6" Offset="0.0"/>
                     <GradientStop Color="#FFB300C2" Offset="1"/>
                 </LinearGradientBrush>
-            </Border.Background>
+            </Border.Background>            
         </Border>
-
+        
         <StackPanel VerticalAlignment="Top">
 
             <TextBlock Text="Welcome "
@@ -26,6 +28,43 @@
                            HorizontalAlignment="Left"
                            Margin="20"
                            x:Name="welcomeTextblock"/>
+            <StackPanel HorizontalAlignment="Left" >
+                <TextBlock     Text="Your events:"
+                           FontWeight="Bold"
+                           FontFamily="helvetica"
+                           FontSize="18"                           
+                           Foreground="White"
+                           HorizontalAlignment="Left"
+                           Margin="20 0 0 20"
+                           x:Name="eventsTextblock"
+                           />
+
+                <ListView 
+                          Name="eventList" 
+                          ItemsSource="{Binding Path=events}" 
+                          Width="450" 
+                          Margin="20 0 0 20" 
+                          Background="Transparent"
+                          FontWeight="Bold"
+                          FontFamily="helvetica"
+                          FontSize="16"                           
+                          Foreground="White"
+                          Height="150"
+                          BorderBrush="Transparent">
+                    
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=EventName}" Width="150">Name</GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=EventStart}" Width="150">Start</GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=EventEnd}" Width="150">End</GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                <Button Style="{StaticResource LoginStyle}" Width="100" Height="40" Content="Add new event" Click="AddNewEvent_Click" Cursor="Hand"/>             
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

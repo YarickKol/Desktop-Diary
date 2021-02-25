@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PresentationLevel", "PresentationLevel\PresentationLevel.csproj", "{A6C21F6F-A1BC-4F74-BD79-63885D60D7C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLibrary", "DataAccessLibrary\DataAccessLibrary.csproj", "{2765D6EC-E05B-4A98-9E1C-55CE8B6C756D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLibrary", "DataAccessLibrary\DataAccessLibrary.csproj", "{2765D6EC-E05B-4A98-9E1C-55CE8B6C756D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{C4A974CD-E00C-4AEA-846D-74FCDE26D8F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2765D6EC-E05B-4A98-9E1C-55CE8B6C756D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2765D6EC-E05B-4A98-9E1C-55CE8B6C756D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2765D6EC-E05B-4A98-9E1C-55CE8B6C756D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4A974CD-E00C-4AEA-846D-74FCDE26D8F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4A974CD-E00C-4AEA-846D-74FCDE26D8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4A974CD-E00C-4AEA-846D-74FCDE26D8F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4A974CD-E00C-4AEA-846D-74FCDE26D8F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
