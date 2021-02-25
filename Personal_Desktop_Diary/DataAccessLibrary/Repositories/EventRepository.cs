@@ -20,16 +20,26 @@ namespace DataAccessLibrary.Repositories
         public void CreateItem(Event item)
         {
             _context.Entry(item).State = EntityState.Added;
+            SaveChanges();
         }
 
         public void DeleteItem(Event item)
         {
             _context.Entry(item).State = EntityState.Deleted;
+            SaveChanges();
         }
 
         public IEnumerable<Event> GetAllItems()
         {
             IEnumerable<Event> items = _context.Set<Event>().AsEnumerable();
+            if (items.Count() == 0)
+                throw new Exception();
+            return items;
+        }
+
+        public IEnumerable<Event> GetEventsByUser(User user)
+        {
+            IEnumerable<Event> items = _context.Events.Where(e => e.UserId == user.Id);
             if (items.Count() == 0)
                 throw new Exception();
             return items;
@@ -51,6 +61,7 @@ namespace DataAccessLibrary.Repositories
         public void UpdateItem(Event item)
         {
             _context.Entry(item).State = EntityState.Modified;
+            SaveChanges();
         }
     }
 }

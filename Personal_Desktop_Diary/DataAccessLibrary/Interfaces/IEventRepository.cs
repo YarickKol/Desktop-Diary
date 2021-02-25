@@ -7,5 +7,6 @@ namespace DataAccessLibrary.Interfaces
 {
     public interface IEventRepository:IDefaultActions<Event>
     {
+        IEnumerable<Event> GetEventsByUser(User user);
     }
 }
